@@ -53,7 +53,7 @@ export default function Store(props) {
     const [allChats, dispatch] = React.useReducer(reducer, intialState);
 
     if (!socket) {
-        socket = io(':3001');
+        socket = io('https://chat-app-gone.herokuapp.com/');
         socket.on('chat message', (msg) => { 
             console.log({ msg })
             dispatch({
